@@ -1,21 +1,27 @@
-import express = require("express");
-import cors = require("cors");
 import "dotenv/config";
-
-import connectDB from "./config/db.ts";
+import express from "express";
+import cors from "cors";
+import connectDB from "./config/db.js";
+import reservationRoutes from "./routes/reservationRoutes.js";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Connect MongoDB
 connectDB();
 
+// Basic test route
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
+// API routes
+app.use("/api/reservations", reservationRoutes);
+
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
