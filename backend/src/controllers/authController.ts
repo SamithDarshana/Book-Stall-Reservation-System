@@ -11,7 +11,7 @@ const JWT_EXPIRES_IN: jwt.SignOptions["expiresIn"] = process.env.JWT_EXPIRES_IN
 
 export const register = async (req: Request, res: Response) => {
   try {
-    const { userId, name, email, password } = req.body;
+    const { userId, name, email, password, role } = req.body;
     if (!userId || !name || !email || !password)
       return res.status(400).json({ message: "Missing fields" });
 
@@ -22,14 +22,29 @@ export const register = async (req: Request, res: Response) => {
     const salt = await bcrypt.genSalt(10);
     const hashed = await bcrypt.hash(password, salt);
 
-    const user = await User.create({ userId, name, email, password: hashed });
-
-    const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, {
-      expiresIn: JWT_EXPIRES_IN,
+    const user = await User.create({
+      userId,
+      name,
+      email,
+      password: hashed,
+      role: role || "user",
     });
 
+    const token = jwt.sign(
+      { id: user._id, email: user.email, role: user.role },
+      JWT_SECRET,
+      {
+        expiresIn: JWT_EXPIRES_IN,
+      }
+    );
+
     return res.status(201).json({
-      user: { id: user._id, name: user.name, email: user.email },
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
       token,
     });
   } catch (err) {
@@ -50,9 +65,13 @@ export const login = async (req: Request, res: Response) => {
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(401).json({ message: "Invalid credentials" });
 
-    const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, {
-      expiresIn: JWT_EXPIRES_IN,
-    });
+    const token = jwt.sign(
+      { id: user._id, email: user.email, role: user.role },
+      JWT_SECRET,
+      {
+        expiresIn: JWT_EXPIRES_IN,
+      }
+    );
 
     return res.json({
       user: { id: user._id, name: user.name, email: user.email },
