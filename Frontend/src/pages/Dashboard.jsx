@@ -17,11 +17,11 @@ export default function Dashboard() {
     const loadDashboardData = async () => {
       try {
         // Fetch all users
-        const usersRes = await fetch("http://localhost:5000/api/users");
+        const usersRes = await fetch("http://localhost:4000/api/users");
         const usersData = await usersRes.json();
 
         // Fetch all reservations
-        const resRes = await fetch("http://localhost:5000/api/reservation/getAll");
+        const resRes = await fetch("http://localhost:4000/api/reservation/getAll");
         const reservationsData = await resRes.json();
 
         // Calculate pending approvals

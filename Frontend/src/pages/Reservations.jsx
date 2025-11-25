@@ -11,7 +11,7 @@ export default function Reservations() {
 
   // Load all reservations
   const loadReservations = () => {
-    fetch("http://localhost:5000/api/reservation/getAll")
+    fetch("http://localhost:4000/api/reservation/getAll")
       .then(res => res.json())
       .then(data => setReservations(data))
       .catch(err => console.error("Error loading reservations:", err));
@@ -24,7 +24,7 @@ export default function Reservations() {
   // Update reservation status
   const handleStatusUpdate = async (reservationId, status) => {
     try {
-      await fetch(`http://localhost:5000/api/reservation/update/${reservationId}`, {
+      await fetch(`http://localhost:4000/api/reservation/update/${reservationId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
@@ -43,7 +43,7 @@ export default function Reservations() {
     if (!window.confirm("Are you sure you want to delete this reservation?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/reservation/delete/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:4000/api/reservation/delete/${id}`, { method: "DELETE" });
       loadReservations();
     } catch (err) {
       console.error("Error deleting reservation:", err);

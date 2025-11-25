@@ -11,7 +11,7 @@ export default function Users() {
 
   // Load all users
   const loadUsers = () => {
-    fetch("http://localhost:5000/api/users") // Your backend API
+    fetch("http://localhost:4000/api/users") // Your backend API
       .then(res => res.json())
       .then(data => setUsers(data))
       .catch(err => console.error("Error loading users:", err));
@@ -26,7 +26,7 @@ export default function Users() {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/users/${userId}`, {
+      await fetch(`http://localhost:4000/api/users/${userId}`, {
         method: "DELETE",
       });
       loadUsers();

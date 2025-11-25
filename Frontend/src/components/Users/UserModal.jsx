@@ -11,7 +11,7 @@ export default function UserModal({ user, onClose, createMode, onRefresh }) {
 
   const handleCreate = async () => {
     try {
-      await fetch("http://localhost:5000/api/users", {
+      await fetch("http://localhost:4000/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
