@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 // API routes
-app.use("/api/reservations", reservationRoutes);
+app.use("/api/reservation", reservationRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
