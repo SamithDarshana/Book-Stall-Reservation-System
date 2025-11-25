@@ -9,7 +9,7 @@
 
 .sidebar {
   width: 260px;
-  background: #1d3557;
+  background: #7c3aed;
   color: white;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 }
 
 .sidebar-title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;
@@ -37,7 +37,7 @@
   padding: 10px 14px;
   border-radius: 8px;
   transition: background 0.25s;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .sidebar-link:hover {
@@ -45,18 +45,19 @@
 }
 
 .logout-btn {
-  margin-top: 30px;
-  padding: 12px 14px;
-  background: #e63946;
+  margin-top: 2rem;
+  padding: 1rem 1.2rem;
+  background: #3aedc6;
   border: none;
-  color: white;
-  border-radius: 10px;
+  color: black;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.25s;
+  transition: 0.25s;
+  font-size: large;
 }
 
 .logout-btn:hover {
-  background: #cc2f3d;
+  background: #3aedc6;
 }
 
 /* ========== SECTION BOXES ========== */
@@ -110,26 +111,21 @@
 /* Modal */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
   z-index: 1000;
   backdrop-filter: blur(3px);
 }
 
 .modal-content {
-  width: 520px;
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 18px;
-  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
-  animation: fadeIn 0.25s ease-in-out;
-  border-top: 6px solid #6a5af9;
+  background: rgba(255,255,255,0.9);
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 
 .modal-content h2 {
@@ -148,135 +144,91 @@
 .modal-content input[type="number"],
 .modal-content select {
   width: 100%;
-  padding: 16px 14px;
-  margin: 5px 0 18px 0;
-  border-radius: 12px;
-  border: 1px solid #c8c8c8;
-  background: #fafafa;
-  font-size: 1.05rem;
-  transition: 0.25s;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(250,250,250,0.9);
 }
 
 .modal-content input:focus,
 .modal-content select:focus {
-  border-color: #6a5af9;
+  border-color: #7c3aed;
   background: #ffffff;
-  box-shadow: 0 0 6px rgba(106, 90, 249, 0.35);
+  box-shadow: 0 0 0 2px rgba(124,58,237,0.3);
   outline: none;
 }
 
 /* ===== BUTTONS ===== */
 .btn-submit {
   width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  background: #6a5af9;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, #6a5af9, #5847e7);
   color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 1.15rem;
+  border-radius: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.25s;
+  margin-top: 0.5rem;
+  transition: transform 0.2s;
 }
 
 .btn-submit:hover {
-  background: #5847e7;
+  transform: translateY(-2px);
 }
 
 /* Close button */
 .modal-close-btn {
   width: 100%;
-  padding: 12px;
-  margin-top: 12px;
+  padding: 0.8rem 1rem;
   background: #d4d4d4;
   color: black;
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
+  border-radius: 16px;
+  font-weight: 500;
+  margin-top: 0.5rem;
   cursor: pointer;
-  transition: 0.25s;
+  transition: transform 0.2s;
 }
 
-.modal-close-btn:hover { 
-  background: #bcbcbc; 
-}
+.modal-close-btn:hover { transform: translateY(-1px); }
 
 .modal-qr {
   margin-top: 15px;
   text-align: center;
 }
 
-/* Delete */
-.btn-delete {
-  background: #ff4242;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-delete:hover {
-  background: #d62828;
-}
-
 /* ===== BUTTONS ON TABLE ===== */
 .btn-create {
-  background: #5a67ff;
+  background: linear-gradient(135deg, #5a67ff, #4752d8);
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 16px;
   border: none;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  transition: transform 0.2s;
 }
 
 .btn-create:hover {
-  background: #4752d8;
+  transform: translateY(-2px);
 }
 
-/* Approve button */
-.btn-approve {
-  background: #2ecc71;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
+/* Table Buttons */
+.btn-approve { background: #2ecc71; color: white; padding: 0.5rem 1rem; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; }
+.btn-approve:hover { background: #27ae60; }
 
-.btn-approve:hover {
-  background: #27ae60;
-}
+.btn-reject { background: #e74c3c; color: white; padding: 0.5rem 1rem; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; }
+.btn-reject:hover { background: #c0392b; }
 
-/* Reject */
-.btn-reject {
-  background: #e74c3c;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
+.btn-view { background: #3498db; color: white; padding: 0.5rem 1rem; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; }
+.btn-view:hover { background: #2980b9; }
 
-.btn-reject:hover {
-  background: #c0392b;
-}
-
-/* View */
-.btn-view {
-  background: #3498db;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-view:hover {
-  background: #2980b9;
-}
+.btn-delete { background: #ff4242; color: white; padding: 0.5rem 1rem; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; }
+.btn-delete:hover { background: #d62828; }
 
 /* Animation */
 @keyframes fadeIn {
