@@ -44,8 +44,6 @@ export default function Users() {
           <Link className="sidebar-link" to="/dashboard">Dashboard</Link>
           <Link className="sidebar-link" to="/reservations">Reservations</Link>
           <Link className="sidebar-link active" to="/users">Users</Link>
-          <Link className="sidebar-link" to="/stalls">Stalls</Link>
-          <Link className="sidebar-link" to="/reports">Reports</Link>
         </nav>
       </aside>
 

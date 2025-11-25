@@ -60,8 +60,6 @@ export default function Reservations() {
           <Link className="sidebar-link" to="/dashboard">Dashboard</Link>
           <Link className="sidebar-link active" to="/reservations">Reservations</Link>
           <Link className="sidebar-link" to="/users">Users</Link>
-          <Link className="sidebar-link" to="/stalls">Stalls</Link>
-          <Link className="sidebar-link" to="/reports">Reports</Link>
         </nav>
       </aside>
 
