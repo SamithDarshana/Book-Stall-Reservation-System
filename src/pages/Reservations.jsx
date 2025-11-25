@@ -50,11 +50,6 @@ export default function Reservations() {
     }
   };
 
-  const handleLogout = () => {
-    // Add logout logic here
-    console.log("Logout clicked");
-  };
-
   return (
     <div className="page-container">
       {/* Sidebar */}
@@ -68,8 +63,6 @@ export default function Reservations() {
           <Link className="sidebar-link" to="/stalls">Stalls</Link>
           <Link className="sidebar-link" to="/reports">Reports</Link>
         </nav>
-
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
       </aside>
 
       {/* Main content */}

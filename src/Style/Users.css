@@ -1,0 +1,49 @@
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.users-table th {
+  background: #f1f5ff;
+  font-weight: 600;
+  color: #1d3557;
+}
+
+.users-table tr:hover {
+  background: #f5f7fa;
+}
+
+/* Buttons */
+.btn-toggle {
+  background: #e63946;
+  color: white;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-toggle:hover {
+  background: #cc2f3d;
+}
+
+.btn-role {
+  background: #1d3557;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-role:hover {
+  background: #13324b;
+}
